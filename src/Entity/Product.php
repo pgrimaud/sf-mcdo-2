@@ -30,6 +30,9 @@ class Product
     #[ORM\OneToMany(mappedBy: 'product', targetEntity: ProductRestaurant::class)]
     private $productRestaurants;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $picture;
+
     public function __construct()
     {
         $this->productRestaurants = new ArrayCollection();
@@ -109,5 +112,17 @@ class Product
     public function __toString(): string
     {
         return $this->getName();
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
     }
 }
