@@ -27,7 +27,7 @@ class Product
     #[Gedmo\Timestampable(on: 'update')]
     private $updatedAt;
 
-    #[ORM\OneToMany(mappedBy: 'product', targetEntity: ProductRestaurant::class)]
+    #[ORM\OneToMany(mappedBy: 'product', targetEntity: ProductRestaurant::class, cascade: ['remove'])]
     private $productRestaurants;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
