@@ -17,8 +17,6 @@ class AppFixtures extends Fixture
             $district = new District();
             $district->setName('Paris ' . $i);
             $district->setPopulation(rand(50000, 200000));
-            $district->setCreatedAt(new \DateTime);
-            $district->setUpdatedAt(new \DateTime);
 
             $manager->persist($district);
 
@@ -26,8 +24,6 @@ class AppFixtures extends Fixture
                 $restaurant = new Restaurant();
                 $restaurant->setName('McDo #' . $i * ($j + 1));
                 $restaurant->setDistrict($district);
-                $restaurant->setCreatedAt(new \DateTime);
-                $restaurant->setUpdatedAt(new \DateTime);
 
                 $manager->persist($restaurant);
             }
@@ -41,8 +37,6 @@ class AppFixtures extends Fixture
         foreach ($products as $product) {
             $productEntity = new Product();
             $productEntity->setName($product);
-            $productEntity->setCreatedAt(new \DateTime);
-            $productEntity->setUpdatedAt(new \DateTime);
 
             $manager->persist($productEntity);
         }
