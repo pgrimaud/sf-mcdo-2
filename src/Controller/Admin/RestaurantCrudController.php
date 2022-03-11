@@ -33,7 +33,7 @@ class RestaurantCrudController extends AbstractCrudController
                     'attr' => [
                         'accept' => 'image/jpeg, image/png'
                     ]
-                ])
+                ])->setHelp('Picture should have 16:9 ratio')
         ];
     }
 }
